@@ -177,7 +177,59 @@ git push origin main
 
 ---
 
-## פיתוח מקומי
+## הרצה עם Docker (מומלץ)
+
+### דרישות
+- [Docker](https://docs.docker.com/get-docker/) מותקן
+- [Docker Compose](https://docs.docker.com/compose/install/) מותקן (מגיע עם Docker Desktop)
+
+### הגדרת משתני סביבה
+
+```bash
+cp .env.example .env
+```
+
+ערכו את `.env` עם הערכים שלכם:
+```
+TELEGRAM_TOKEN=your-token-here
+GOOGLE_CHAT_WEBHOOK=your-webhook-url-here
+```
+
+### הרצה עם Docker Compose (הכי פשוט)
+
+```bash
+docker compose up -d
+```
+
+לעצירה:
+```bash
+docker compose down
+```
+
+לצפייה בלוגים:
+```bash
+docker compose logs -f
+```
+
+### הרצה עם Docker ישירות
+
+```bash
+# בניית האימג'
+docker build -t telegram-to-google-bot .
+
+# הרצה
+docker run -d --name tg-bot --env-file .env telegram-to-google-bot
+
+# לוגים
+docker logs -f tg-bot
+
+# עצירה
+docker stop tg-bot && docker rm tg-bot
+```
+
+---
+
+## פיתוח מקומי (בלי Docker)
 
 ### התקנה
 
@@ -288,3 +340,9 @@ tests/
 ### שגיאת `ValidationError` בהפעלה
 - חסר משתנה סביבה נדרש
 - בדקו שהגדרתם את `TELEGRAM_TOKEN` ו-`GOOGLE_CHAT_WEBHOOK`
+
+### Docker - הבוט לא עולה
+- בדקו שקובץ `.env` קיים באותה תיקייה: `ls .env`
+- בדקו שהערכים נכונים: `docker compose config` (מציג את ההגדרות בלי סודות)
+- צפו בלוגים: `docker compose logs -f`
+- בנו מחדש: `docker compose build --no-cache && docker compose up -d`

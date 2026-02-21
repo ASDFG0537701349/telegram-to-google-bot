@@ -1,0 +1,7 @@
+services:
+  bot:
+    build: .
+    env_file: .env
+    restart: unless-stopped
+    ports:
+      - "${PORT:-5000}:${PORT:-5000}"
