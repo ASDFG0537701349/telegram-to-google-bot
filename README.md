@@ -157,7 +157,7 @@ git push origin main
 | `TELEGRAM_TOKEN` | ה-Token שקיבלתם מ-BotFather |
 | `GOOGLE_CHAT_WEBHOOK` | כתובת ה-Webhook שהעתקתם מגוגל צ'אט |
 | `LOG_LEVEL` | `INFO` |
-| `PYTHON_VERSION` | `3.12.0` |
+| `PYTHON_VERSION` | `3.14.0` |
 
 ### 4.5 יצירה והפעלה
 

@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "telegram-to-google-bot"
 version = "1.0.0"
 description = "Forwards Telegram messages to Google Chat"
-requires-python = ">=3.12"
+requires-python = ">=3.14"
 dependencies = [
     "pyTelegramBotAPI>=4.20",
     "requests>=2.31",
