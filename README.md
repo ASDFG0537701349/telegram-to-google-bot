@@ -1,4 +1,4 @@
-# telegram-to-google-bot
+# telegram bot-to-google-chet
 
 בוט שמעביר הודעות (טקסט + תמונות) מטלגרם לגוגל צ'אט, באופן אוטומטי.
 
